@@ -58,7 +58,6 @@ class SbbApplicationTests {
 
 		q2.getAnswerList().add(a1); // 조금 더 객체지향적으로 변했다.
 	}
-	}
 
 	@Test
 	@DisplayName("데이터 저장")
