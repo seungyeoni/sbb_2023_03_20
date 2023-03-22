@@ -24,9 +24,10 @@ public class AnswerController {
     public String createAnswer(Model model, @PathVariable("id") Integer id, @RequestParam String content) {
         // 관련 질문을 얻어온다.
         Question question = this.questionService.getQuestion(id);
-        List<Answer> answerList = answerService.getAnswersByQuestionId(id);
+
         // TODO: 답변을 저장한다.
         answerService.create(question, content);
+
         return String.format("redirect:/question/detail/%s", id);
     }
 }
