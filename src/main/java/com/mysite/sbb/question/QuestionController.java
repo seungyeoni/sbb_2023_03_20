@@ -23,8 +23,8 @@ public class QuestionController {
 
     @GetMapping(value = "/question/detail/{id}")
     public String detail(Model model, @PathVariable("id") Integer id) {
-
-        model.addAttribute("id", id);
+        Question question = this.questionService.getQuestion(id);
+        model.addAttribute("question", question);
         return "question_detail";
     }
 }
