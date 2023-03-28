@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 // answer 테이블이 생김
 @Getter
@@ -32,5 +33,8 @@ public class Answer {
     @ManyToOne
     @ToString.Exclude // ToString 대상에서 제외
     private Question question;
-    // `public class Answer` @ManyToOne `private Question question`
+    // `public class Answer` @ManyToOne `private Question question
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }

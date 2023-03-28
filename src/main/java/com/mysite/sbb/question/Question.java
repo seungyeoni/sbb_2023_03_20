@@ -10,6 +10,7 @@ import lombok.ToString;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 // question 테이블이 생김
 @Getter
@@ -48,4 +49,7 @@ public class Question {
         a.setQuestion(this);
         answerList.add(a);
     }
+
+    @ManyToMany
+    Set<SiteUser> voter;
 }
